@@ -134,8 +134,8 @@ jobs:
       - run:
           name: Analyze backend.
           command: |
-            cd backend
-            npm audit fix --audit-level=critical --force
+            #cd backend
+            #npm audit fix --audit-level=critical --force
       - save_cache:
           paths: [backend/node_modules]
           key: backend-build
@@ -153,4 +153,3 @@ workflows:
           requires: [build-backend]
       - scan-frontend:
           requires: [build-frontend]
-          
