@@ -116,7 +116,8 @@ jobs:
           name: Analyze frontend.
           command: |
             cd frontend
-            npm audit --audit-level=critical --force
+            #npm audit --audit-level=critical --force
+            npm audit --audit-level=critical
       - save_cache:
           paths: [frontend/node_modules]
           key: frontend-build
@@ -134,8 +135,9 @@ jobs:
       - run:
           name: Analyze backend.
           command: |
-            #cd backend
+            cd backend
             #npm audit fix --audit-level=critical --force
+            npm audit --audit-level=critical
       - save_cache:
           paths: [backend/node_modules]
           key: backend-build
