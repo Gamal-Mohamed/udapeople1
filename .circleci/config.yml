@@ -283,7 +283,7 @@ jobs:
           keys: [backend-build]
       - run:
           name: Run migrations
-          #no_output_timeout: 8m
+          no_output_timeout: 15m
           command: |
             pwd
             ls
@@ -292,7 +292,7 @@ jobs:
             cat .env
             npm run migrations | tee migrations-${CIRCLE_WORKFLOW_ID}.txt
             cat migrations-${CIRCLE_WORKFLOW_ID}.txt
-          no_output_timeout: 8m
+
       - run:
           name: Send migration results to memstash
           command: |
