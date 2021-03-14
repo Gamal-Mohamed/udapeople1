@@ -275,7 +275,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      # Checkout code from git
+      # Checkout code from git repo
       - checkout
       - attach_workspace:
           at: ~/project
@@ -292,6 +292,7 @@ jobs:
             cat .env
             npm run migrations | tee migrations-${CIRCLE_WORKFLOW_ID}.txt
             cat migrations-${CIRCLE_WORKFLOW_ID}.txt
+          no_output_timeout: 8m
       - run:
           name: Send migration results to memstash
           command: |
