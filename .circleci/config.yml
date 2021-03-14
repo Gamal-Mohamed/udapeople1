@@ -276,7 +276,7 @@ jobs:
       # Checkout code from git repo
       - checkout
       - attach_workspace:
-          at: ~/project
+          at: ~/
       - restore_cache:
           keys: [backend-build]
       - run:
