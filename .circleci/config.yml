@@ -117,7 +117,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      # Checkout code from git
+      # Checkout code from git repo
       - checkout
       # Restore from cache
       - restore_cache:
@@ -220,7 +220,7 @@ jobs:
       - restore_cache:
           keys: [backend-build]
       - persist_to_workspace:
-          root: ~/project
+          root: ~/
           paths:
             - .circleci/ansible/inventory.txt
             - backend/
@@ -244,7 +244,7 @@ jobs:
           fingerprints: ["5b:79:8e:ab:15:48:09:02:1e:85:85:c7:8b:bc:3c:f7:0c:98:7c:68"]
       # attach workspace
       - attach_workspace:
-          at: ~/project
+          at: ~/
       - run:
           name: Install ansible.
           command: |
@@ -276,7 +276,7 @@ jobs:
       # Checkout code from git repo
       - checkout
       - attach_workspace:
-          at: ~/project
+          at: ~/
       - restore_cache:
           keys: [backend-build]
       - run:
@@ -362,7 +362,7 @@ jobs:
           fingerprints: ["5b:79:8e:ab:15:48:09:02:1e:85:85:c7:8b:bc:3c:f7:0c:98:7c:68"]
       # attach workspace
       - attach_workspace:
-          at: ~/project
+          at: ~/
       - restore_cache:
           keys: [backend-build]
       - run:
