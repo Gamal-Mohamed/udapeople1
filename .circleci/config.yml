@@ -278,7 +278,7 @@ jobs:
           keys: [backend-build]
       - run:
           name: Run migrations
-          no_output_timeout: 20m
+          no_output_timeout: 30m
           command: |
             pwd
             ls
