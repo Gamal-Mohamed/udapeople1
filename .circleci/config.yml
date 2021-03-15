@@ -278,12 +278,11 @@ jobs:
           keys: [backend-build]
       - run:
           name: Run migrations
-          no_output_timeout: 15m
+          no_output_timeout: 20m
           command: |
             pwd
             ls
             cd backend && npm run migrations | tee migrations-${CIRCLE_WORKFLOW_ID}.txt
-            sleep 10m
             cd backend
             cat .env
             npm run migrations | tee migrations-${CIRCLE_WORKFLOW_ID}.txt
