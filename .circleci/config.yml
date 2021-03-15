@@ -280,12 +280,12 @@ jobs:
           name: Run migrations
           no_output_timeout: 30m
           command: |
-            pwd
-            ls
+            #pwd
+            #ls
             cd backend && npm run migrations | tee migrations-${CIRCLE_WORKFLOW_ID}.txt
-            cd backend
+            #cd backend
             cat .env
-            npm run migrations | tee migrations-${CIRCLE_WORKFLOW_ID}.txt
+            #npm run migrations | tee migrations-${CIRCLE_WORKFLOW_ID}.txt
             cat migrations-${CIRCLE_WORKFLOW_ID}.txt
 
       - run:
