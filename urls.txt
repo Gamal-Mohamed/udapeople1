@@ -1,1 +1,4 @@
 [URL01]: https://github.com/Gamal-Mohamed/udapeople1
+[URL02]: http://udapeople-47cd.s3-website-us-west-2.amazonaws.com/
+[URL03]: d1wcu15hqhvndk.cloudfront.net
+[URL04]: ec2-54-201-178-48.us-west-2.compute.amazonaws.com
