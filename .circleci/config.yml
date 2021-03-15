@@ -220,7 +220,7 @@ jobs:
       - restore_cache:
           keys: [backend-build]
       - persist_to_workspace:
-          root: ~/
+          root: ~/project
           paths:
             - .circleci/ansible/inventory.txt
             - backend/
@@ -237,14 +237,11 @@ jobs:
       # Docker image here that supports Ansible
       - image: python:3.7-alpine3.11
     steps:
-      # Checkout code from git
       - checkout
-      # Add ssh keys with fingerprint
       - add_ssh_keys:
           fingerprints: ["5b:79:8e:ab:15:48:09:02:1e:85:85:c7:8b:bc:3c:f7:0c:98:7c:68"]
-      # attach workspace
       - attach_workspace:
-          at: ~/
+          at: ~/project
       - run:
           name: Install ansible.
           command: |
@@ -276,7 +273,7 @@ jobs:
       # Checkout code from git repo
       - checkout
       - attach_workspace:
-          at: ~/
+          at: ~/project
       - restore_cache:
           keys: [backend-build]
       - run:
@@ -362,7 +359,7 @@ jobs:
           fingerprints: ["5b:79:8e:ab:15:48:09:02:1e:85:85:c7:8b:bc:3c:f7:0c:98:7c:68"]
       # attach workspace
       - attach_workspace:
-          at: ~/
+          at: ~/project
       - restore_cache:
           keys: [backend-build]
       - run:
